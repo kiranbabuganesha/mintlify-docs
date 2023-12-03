@@ -5,6 +5,12 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
+    "api": {
+      "baseUrl": "https://mdqs.sprouts.ai/", 
+      "auth": {
+        "method": "bearer" 
+      }
+    },
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#0D9373",
