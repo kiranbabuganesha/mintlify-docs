@@ -12,6 +12,11 @@
         "url": "https://mdqs.sprouts.ai"
       }
     ],
+    "security": [
+      {
+        "bearerAuth": []
+      }
+    ],
     "paths": {
       "/v1/target_profiles/contacts": {
         "post": {
