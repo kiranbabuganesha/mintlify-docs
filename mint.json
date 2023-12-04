@@ -1,16 +1,10 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Sprouts",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-    "api": {
-      "baseUrl": "https://mdqs.sprouts.ai/", 
-      "auth": {
-        "method": "bearer" 
-      }
-    },
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#0D9373",
@@ -24,61 +18,74 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
-  },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "url": "mailto:support@sprouts.ai"
     },
     {
       "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://sprouts.ai/blog"
     }
   ],
   "navigation": [
-    {
-      "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
-    },
-    {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
     {
       "group": "API Documentation",
       "pages": ["api-reference/introduction"]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "target-profile-controller",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "api-reference/MDQS/target-profile-controller/post-v1target_profilescontacts",
+        "api-reference/MDQS/target-profile-controller/post-v1target_profilesaccounts"
+      ]
+    },
+    {
+      "group": "search-controller",
+      "pages": [
+        "api-reference/MDQS/search-controller/post-v1searchcontacts",
+        "api-reference/MDQS/search-controller/post-v1searchaccounts"
+      ]
+    },
+    {
+      "group": "public-search-controller",
+      "pages": [
+        "api-reference/MDQS/public-search-controller/post-v1publicsearchcontacts",
+        "api-reference/MDQS/public-search-controller/post-v1publicsearchaccounts",
+        "api-reference/MDQS/public-search-controller/get-v1publicsearchcontacts"
+      ]
+    },
+    {
+      "group": "public-external-search-controller",
+      "pages": [
+        "api-reference/MDQS/public-external-search-controller/post-v1publicexternal_search-contacts",
+        "api-reference/MDQS/public-external-search-controller/post-v1publicexternal_search-accounts",
+        "api-reference/MDQS/public-external-search-controller/get-v1publicexternal_search-contacts"
+      ]
+    },
+    {
+      "group": "database-filter-controller",
+      "pages": [
+        "api-reference/MDQS/database-filter-controller/get-v1external_search-filters",
+        "api-reference/MDQS/database-filter-controller/post-v1external_search-filters",
+        "api-reference/MDQS/database-filter-controller/get-v1external_search-filterstags",
+        "api-reference/MDQS/database-filter-controller/get-v1external_search-filterscompanies"
+      ]
+    },
+    {
+      "group": "external-search-controller",
+      "pages": [
+        "api-reference/MDQS/external-search-controller/post-v1external_search-contacts",
+        "api-reference/MDQS/external-search-controller/post-v1external_search-accounts",
+        "api-reference/MDQS/external-search-controller/get-v1external_search-contacts"
+      ]
+    },
+    {
+      "group": "enrichment-controller",
+      "pages": [
+        "api-reference/MDQS/enrichment-controller/get-v1enrichcontacts",
+        "api-reference/MDQS/enrichment-controller/get-v1enrichaccounts"
       ]
     }
-  ],
+    ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "linkedin": "https://www.linkedin.com/company/sprouts-ai/mycompany/"
   }
 }
