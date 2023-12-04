@@ -34,21 +34,21 @@
       "group": "MDQS",
       "pages": [
         {
-          "group": "Target Profile Controller",
+          "group": "Target Profile API",
           "pages": [
             "api-reference/MDQS/target-profile-controller/post-v1target_profilescontacts",
             "api-reference/MDQS/target-profile-controller/post-v1target_profilesaccounts"
           ]
         },
         {
-          "group": "Search Controller",
+          "group": "Search API",
           "pages": [
             "api-reference/MDQS/search-controller/post-v1searchcontacts",
             "api-reference/MDQS/search-controller/post-v1searchaccounts"
           ]
         },
         {
-          "group": "Public Search Controller",
+          "group": "Public Search API",
           "pages": [
             "api-reference/MDQS/public-search-controller/post-v1publicsearchcontacts",
             "api-reference/MDQS/public-search-controller/post-v1publicsearchaccounts",
@@ -56,7 +56,7 @@
           ]
         },
         {
-          "group": "Public External Search Controller",
+          "group": "Public External Search API",
           "pages": [
             "api-reference/MDQS/public-external-search-controller/post-v1publicexternal_search-contacts",
             "api-reference/MDQS/public-external-search-controller/post-v1publicexternal_search-accounts",
@@ -64,7 +64,7 @@
           ]
         },
         {
-          "group": "Database Filter Controller",
+          "group": "Database Filter API",
           "pages": [
             "api-reference/MDQS/database-filter-controller/get-v1external_search-filters",
             "api-reference/MDQS/database-filter-controller/post-v1external_search-filters",
@@ -73,7 +73,7 @@
           ]
         },
         {
-          "group": "External Search Controller",
+          "group": "External Search API",
           "pages": [
             "api-reference/MDQS/external-search-controller/post-v1external_search-contacts",
             "api-reference/MDQS/external-search-controller/post-v1external_search-accounts",
@@ -81,7 +81,7 @@
           ]
         },
         {
-          "group": "Enrichment Controller",
+          "group": "Enrichment API",
           "pages": [
             "api-reference/MDQS/enrichment-controller/get-v1enrichcontacts",
             "api-reference/MDQS/enrichment-controller/get-v1enrichaccounts"
