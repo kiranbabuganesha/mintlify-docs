@@ -27,6 +27,7 @@
   ],
   "navigation": [
     {
+      "group":"",
       "pages": ["api-reference/introduction"]
     },
     {
