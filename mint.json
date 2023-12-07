@@ -56,7 +56,7 @@
     {
       "group": "IP Lookup",
       "pages": [
-        "api-reference/iplookup/ip-lookup-apis/list-of-ip-lookup-unique-domains.mdx"
+        "api-reference/iplookup/ip-lookup-apis/list-of-ip-lookup-unique-domains"
       ]
     }
     ],
