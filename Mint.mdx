@@ -1,0 +1,100 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Sprouts",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#615CF6",
+    "light": "#07C983",
+    "dark": "#0D9373",
+    "anchors": {
+      "from": "#0D9373",
+      "to": "#07C983"
+    }
+  },
+  "modeToggle": {
+    "default": "light",
+    "isHidden": false
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@sprouts.ai"
+    },
+    {
+      "name": "Blog",
+      "url": "https://sprouts.ai/blog"
+    }
+  ],
+  "navigation": [
+    {
+      "group":"",
+      "pages": ["api-reference/introduction"]
+    },
+    {
+      "group": "MDQS",
+      "pages": [
+        {
+          "group": "Target Profile API",
+          "pages": [
+            "api-reference/MDQS/target-profile-controller/post-v1target_profilescontacts",
+            "api-reference/MDQS/target-profile-controller/post-v1target_profilesaccounts"
+          ]
+        },
+        {
+          "group": "Search API",
+          "pages": [
+            "api-reference/MDQS/search-controller/post-v1searchcontacts",
+            "api-reference/MDQS/search-controller/post-v1searchaccounts"
+          ]
+        },
+        {
+          "group": "Public Search API",
+          "pages": [
+            "api-reference/MDQS/public-search-controller/post-v1publicsearchcontacts",
+            "api-reference/MDQS/public-search-controller/post-v1publicsearchaccounts",
+            "api-reference/MDQS/public-search-controller/get-v1publicsearchcontacts"
+          ]
+        },
+        {
+          "group": "Public External Search API",
+          "pages": [
+            "api-reference/MDQS/public-external-search-controller/post-v1publicexternal_search-contacts",
+            "api-reference/MDQS/public-external-search-controller/post-v1publicexternal_search-accounts",
+            "api-reference/MDQS/public-external-search-controller/get-v1publicexternal_search-contacts"
+          ]
+        },
+        {
+          "group": "Database Filter API",
+          "pages": [
+            "api-reference/MDQS/database-filter-controller/get-v1external_search-filters",
+            "api-reference/MDQS/database-filter-controller/post-v1external_search-filters",
+            "api-reference/MDQS/database-filter-controller/get-v1external_search-filterstags",
+            "api-reference/MDQS/database-filter-controller/get-v1external_search-filterscompanies"
+          ]
+        },
+        {
+          "group": "External Search API",
+          "pages": [
+            "api-reference/MDQS/external-search-controller/post-v1external_search-contacts",
+            "api-reference/MDQS/external-search-controller/post-v1external_search-accounts",
+            "api-reference/MDQS/external-search-controller/get-v1external_search-contacts"
+          ]
+        },
+        {
+          "group": "Enrichment API",
+          "pages": [
+            "api-reference/MDQS/enrichment-controller/get-v1enrichcontacts",
+            "api-reference/MDQS/enrichment-controller/get-v1enrichaccounts"
+          ]
+        }
+      ]
+    }
+    ],
+  "footerSocials": {
+    "linkedin": "https://www.linkedin.com/company/sprouts-ai/mycompany/"
+  }
+}
