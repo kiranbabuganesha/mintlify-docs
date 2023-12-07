@@ -37,13 +37,13 @@
     {
       "group": "MDQS",
       "pages": [
-        {
+        /*{
           "group": "Target Profile API",
           "pages": [
             "api-reference/MDQS/target-profile-controller/post-v1target_profilescontacts",
             "api-reference/MDQS/target-profile-controller/post-v1target_profilesaccounts"
           ]
-        },
+        },*/
         {
           "group": "Search API",
           "pages": [
@@ -51,15 +51,15 @@
             "api-reference/MDQS/search-controller/post-v1searchaccounts"
           ]
         },
-        {
+        /*{
           "group": "Public Search API",
           "pages": [
             "api-reference/MDQS/public-search-controller/post-v1publicsearchcontacts",
             "api-reference/MDQS/public-search-controller/post-v1publicsearchaccounts",
             "api-reference/MDQS/public-search-controller/get-v1publicsearchcontacts"
           ]
-        },
-        {
+        },*/
+        /*{
           "group": "Public External Search API",
           "pages": [
             "api-reference/MDQS/public-external-search-controller/post-v1publicexternal_search-contacts",
@@ -83,7 +83,7 @@
             "api-reference/MDQS/external-search-controller/post-v1external_search-accounts",
             "api-reference/MDQS/external-search-controller/get-v1external_search-contacts"
           ]
-        },
+        },*/
         {
           "group": "Enrichment API",
           "pages": [
