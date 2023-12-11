@@ -522,7 +522,7 @@
         "operationId": "captureIPLookupWithCustomerKey",
         "parameters": [
           {
-            "name": "secretKey",
+            "name": "Customer Secret Key",
             "in": "header",
             "required": true,
             "schema": {

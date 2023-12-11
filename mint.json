@@ -59,7 +59,7 @@
         {
           "group": "Capture API",
           "pages":[
-            "api-reference/iplookup/ip-lookup-apis/create-ip-lookup-with-customer-secret-key-1"
+            "api-reference/iplookup/ip-lookup-apis/create-ip-lookup-with-customer-secret-key"
           ]
         },
         {
