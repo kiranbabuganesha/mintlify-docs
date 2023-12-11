@@ -740,6 +740,14 @@
           "operationId": "enrichContact",
           "parameters": [
             {
+              "name": "Customer Secret Key",
+              "in": "header",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
               "name": "Prospect e-mail id",
               "in": "query",
               "required": true,
@@ -769,6 +777,14 @@
           ],
           "operationId": "enrichAccount",
           "parameters": [
+            {
+              "name": "Customer Secret Key",
+              "in": "header",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
             {
               "name": "Domain",
               "in": "query",
