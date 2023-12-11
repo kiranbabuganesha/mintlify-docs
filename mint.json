@@ -65,20 +65,20 @@
         {
           "group": "Webhook APIs",
           "pages": [
-            "api-reference/iplookup/customercontroller/put-v1webhooks",
-            "api-reference/iplookup/customercontroller/delete-v1webhooks",
             "api-reference/iplookup/customercontroller/get-v1webhooks",
             "api-reference/iplookup/customercontroller/post-v1webhooks",
-            "api-reference/iplookup/customercontroller/patch-v1webhooksdeactivate",
-            "api-reference/iplookup/customercontroller/patch-v1webhooksactivate"
+            "api-reference/iplookup/customercontroller/put-v1webhooks",
+            "api-reference/iplookup/customercontroller/delete-v1webhooks",
+            "api-reference/iplookup/customercontroller/patch-v1webhooksactivate",
+            "api-reference/iplookup/customercontroller/patch-v1webhooksdeactivate"
           ]
         },
         {
           "group": "Customer Controller",
           "pages": [
-            "api-reference/iplookup/customercontroller/patch-v1customersupdatealloweddomains",
             "api-reference/iplookup/customercontroller/patch-v1customersenabletracking",
-            "api-reference/iplookup/customercontroller/patch-v1customersdisabletracking"
+            "api-reference/iplookup/customercontroller/patch-v1customersdisabletracking",
+            "api-reference/iplookup/customercontroller/patch-v1customersupdatealloweddomains"
           ]
         }
 
