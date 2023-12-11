@@ -50,13 +50,19 @@
             "api-reference/MDQS/enrichment-controller/get-v1enrichcontacts",
             "api-reference/MDQS/enrichment-controller/get-v1enrichaccounts"
           ]
-        }
+        }     
       ]
     },
     {
-      "group": "IP Lookup",
-      "pages": [
-        "api-reference/iplookup/ip-lookup-apis/list-of-ip-lookup-unique-domains"
+      "group": "IP Lookup Service APIs",
+      "pages":[
+        {"group": "Capture IP",
+        "pages":[
+          "api-reference/iplookup/ip-lookup-apis/api-to-get-all-cities",
+          "api-reference/iplookup/customer-controller/authenticate-customer-using-secret-key"
+        ]
+      }
+
       ]
     }
     ],

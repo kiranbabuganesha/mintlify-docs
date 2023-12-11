@@ -414,14 +414,7 @@
               "type": "string"
             }
           },
-          {
-            "name": "X-Login-Email",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
+
           {
             "name": "databaseName",
             "in": "path",
@@ -470,14 +463,7 @@
               "type": "string"
             }
           },
-          {
-            "name": "X-Login-Email",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
+
           {
             "name": "databaseName",
             "in": "path",
@@ -714,14 +700,7 @@
               "type": "string"
             }
           },
-          {
-            "name": "X-Login-Email",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
+
           {
             "name": "databaseName",
             "in": "path",
@@ -815,6 +794,18 @@
     }
   },
   "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      },
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Customer Secret Key"
+      }
+    },
     "schemas": {
       "AccountDto": {
         "required": [

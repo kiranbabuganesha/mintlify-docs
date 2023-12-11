@@ -1,0 +1,3069 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Sprouts IP Lookup API",
+    "version": "1.0.0",
+    "contact": {
+      "name": "SproutsAI",
+      "url": "https://www.sprouts.ai",
+      "email": "admin@sprouts.ai"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://wa.sprouts.ai:3000"
+    }
+  ],
+  "tags": [
+    {
+      "name": "IP Lookup APIs",
+      "description": "This collection contains APIs for IP Lookup Utility"
+    }
+  ],
+  "paths": {
+    "/v1/iplookups": {
+      "post": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "Create IP Lookup with Origin header",
+        "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
+        "operationId": "captureIPLookup",
+        "parameters": [
+          {
+            "name": "origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IPLookupRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/domains": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "List of IP Lookup Unique Domains",
+        "description": "This API fetches List of Unique IP Lookup domains. ",
+        "operationId": "getDomains_1",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeCities",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "excludeCities",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "includeStates",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "excludeStates",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "includeCountries",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "excludeCountries",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "includeUtmSources",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "excludeUtmSources",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "includeUtmMediums",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "excludeUtmMediums",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "includeUtmCampaigns",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "excludeUtmCampaigns",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "List of IP Lookup Unique Domains",
+        "description": "This API fetches List of Unique IP Lookup domains. ",
+        "operationId": "getDomains",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DomainRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/capture": {
+      "post": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "Create IP Lookup with Customer Secret Key",
+        "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
+        "operationId": "captureIPLookupWithCustomerKey",
+        "parameters": [
+          {
+            "name": "secretKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IPLookupRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/iplookups/autoCapture": {
+      "post": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "Create IP Lookup with Origin header AND Customer Secret Key",
+        "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
+        "operationId": "autoCaptureIPLookup",
+        "parameters": [
+          {
+            "name": "origin",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "secretKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AutoIPLookupRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/customers": {
+      "get": {
+        "tags": [
+          "customer-controller"
+        ],
+        "operationId": "getCustomers",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "predicate",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Predicate"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResponseDtoCustomerResponseDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "customer-controller"
+        ],
+        "operationId": "createCustomer",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/customers/authenticate": {
+      "post": {
+        "tags": [
+          "customer-controller"
+        ],
+        "summary": "Authenticate Customer using Secret Key",
+        "description": "This API authenticates customer with secret key.",
+        "operationId": "authenticateCustomer",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "secretKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/capture-ip": {
+      "post": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "Create IP Lookup with Customer Secret Key",
+        "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
+        "operationId": "captureIPLookupWithAuthorization",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IPLookupRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/customers/{customerId}/updateAllowedDomains": {
+      "patch": {
+        "tags": [
+          "customer-controller"
+        ],
+        "operationId": "updateAllowedDomains",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerUpdateDomainsRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/customers/{customerId}/reloadSecretKey": {
+      "patch": {
+        "tags": [
+          "customer-controller"
+        ],
+        "operationId": "reloadSecretKey",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReloadSecretKeyRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/customers/{customerId}/enableTracking": {
+      "patch": {
+        "tags": [
+          "customer-controller"
+        ],
+        "operationId": "enableTracking",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/customers/{customerId}/disableTracking": {
+      "patch": {
+        "tags": [
+          "customer-controller"
+        ],
+        "operationId": "disableTracking",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/customers/updateAllowedDomains": {
+      "patch": {
+        "tags": [
+          "customer-controller"
+        ],
+        "operationId": "updateCustomerAllowedDomains",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerUpdateDomainsRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/customers/enableTracking": {
+      "patch": {
+        "tags": [
+          "customer-controller"
+        ],
+        "operationId": "enableCustomerTracking",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/customers/disableTracking": {
+      "patch": {
+        "tags": [
+          "customer-controller"
+        ],
+        "operationId": "disableCustomerTracking",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{ip}/pageVisits": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "List IP page visits",
+        "description": "This API fetches List of Page Visit History entries against provided IP for provided customer key.",
+        "operationId": "getIPPageVisits",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "secretKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromIpHitTime",
+            "in": "query",
+            "description": "From IP Hit Time filter in UTC. Required Date time format is : yyyy-MM-dd HH:mm",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "toIpHitTime",
+            "in": "query",
+            "description": "To IP Hit Time filter in UTC. Required Date time format is : yyyy-MM-dd HH:mm",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResponseDtoIPPageVisitHistoryResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "List IP Lookup entries",
+        "description": "This API fetches List of IP Lookups whose Domains are resolved with their customer mapping.",
+        "operationId": "getCustomerIPMappings",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "secretKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromIpHitTime",
+            "in": "query",
+            "description": "From Last IP Hit Time filter in UTC. Required Date time format is : yyyy-MM-dd HH:mm",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "toIpHitTime",
+            "in": "query",
+            "description": "To Last IP Hit Time filter in UTC. Required Date time format is : yyyy-MM-dd HH:mm",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IPLookupResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/{domain}": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "List IP Lookup entries Customer and domain in pagenated format",
+        "description": "This API fetches List of CustomerIpMapping  whose Domains are resolved with their customer mapping in pagenated format.",
+        "operationId": "getIPLookupsByCustomerAndDomain",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "domain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResponseDtoIPLookupResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/utmParameters": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "API to get all Utm Parameters",
+        "description": "This API fetches all Utm Parameters.",
+        "operationId": "getUtmParameters",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "utmType",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResponseDtoString"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/states": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "API to get all States",
+        "description": "This API fetches all States.",
+        "operationId": "getStates",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StateResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/paginate": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "List IP Lookup entries in pagenated format",
+        "description": "This API fetches List of IP Lookups whose Domains are resolved with their customer mapping in pagenated format.",
+        "operationId": "getCustomerIPMappingsPaginated",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "secretKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromIpHitTime",
+            "in": "query",
+            "description": "From Last IP Hit Time filter in UTC. Required Date time format is : yyyy-MM-dd HH:mm",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "toIpHitTime",
+            "in": "query",
+            "description": "To Last IP Hit Time filter in UTC. Required Date time format is : yyyy-MM-dd HH:mm",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResponseDtoIPLookupResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/locations": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "API to get all Locations",
+        "description": "This API fetches all Locations.",
+        "operationId": "getLocations",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResponseDtoIPLocationResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/domains/{domain}": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "API to get Consolidated data for a particular Domain",
+        "description": "This API fetches IP Lookups Consolidated data for a particular Domain.",
+        "operationId": "getCustomerIPMappingByDomain",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "domain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/IPLookupDomainWiseResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/domains/{domain}/visitDates": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "API to get unique page visit dates for provided Domain",
+        "description": "This API fetches unique page visit dates by provided domain .",
+        "operationId": "getIPPageVisitDatesByDomain",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "domain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResponseDtoIPPageVisitDateResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/domains/{domain}/visitDates/{date}": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "API to get all Page Visits for provided Domain and Date",
+        "description": "This API fetches all Page Visits for provided Domain and Date.",
+        "operationId": "getIPPageVisitsLocations",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "domain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResponseDtoIPPageVisitLocationResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/domains/{domain}/visitDates/{date}/ipLocations": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "API to get all Page Visits for provided Domain, Date and IP Location",
+        "description": "This API fetches all Page Visits for provided Domain, Date and IP Location.",
+        "operationId": "getIPPageVisitsByDomainAndLocation",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "domain",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "ipCity",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipStateCode",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ipCountryCode",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "marketingSource",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResponseDtoIPPageVisitHistoryResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/domainWise": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "List IP Lookup entries domain wise in paginated format",
+        "description": "This API fetches List of IP Lookups domain wise whose Domains are resolved with their customer mapping in paginated format.",
+        "operationId": "getCustomerIPMappingsDomainWise",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromIpHitTime",
+            "in": "query",
+            "description": "From Last IP Hit Time filter in UTC. Required Date time format is : yyyy-MM-dd HH:mm",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "toIpHitTime",
+            "in": "query",
+            "description": "To Last IP Hit Time filter in UTC. Required Date time format is : yyyy-MM-dd HH:mm",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResponseDtoIPLookupDomainWiseResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/countries": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "API to get all Countries",
+        "description": "This API fetches all Countries.",
+        "operationId": "getCountries",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/cities": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "API to get all Cities",
+        "description": "This API fetches all Cities.",
+        "operationId": "getCities",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "stateCode",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CityResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/{customerId}/attempts": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "List IP Lookup entries with ClearBit attempts in paginated format",
+        "description": "This API fetches List of IP Lookups with ClearBit attempts in paginated format.",
+        "operationId": "getCustomerIPMappingAttempts",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromIpHitTime",
+            "in": "query",
+            "description": "From Last IP Hit Time filter in UTC. Required Date time format is : yyyy-MM-dd HH:mm",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "toIpHitTime",
+            "in": "query",
+            "description": "To Last IP Hit Time filter in UTC. Required Date time format is : yyyy-MM-dd HH:mm",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResponseDtoIPLookupAttemptsResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/iplookups/pageVisits": {
+      "get": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "List IP page visits",
+        "description": "This API fetches List of Page Visit History entries against provided customer key.",
+        "operationId": "getIPPageVisits_1",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "secretKey",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromIpHitTime",
+            "in": "query",
+            "description": "From IP Hit Time filter in UTC. Required Date time format is : yyyy-MM-dd HH:mm",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "toIpHitTime",
+            "in": "query",
+            "description": "To IP Hit Time filter in UTC. Required Date time format is : yyyy-MM-dd HH:mm",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "showunrevealedhits",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Zero-based page index (0..N)",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "The size of the page to be returned",
+            "schema": {
+              "type": "integer",
+              "default": 20
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResponseDtoIPPageVisitHistoryResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/customers/{customerId}": {
+      "get": {
+        "tags": [
+          "customer-controller"
+        ],
+        "operationId": "getCustomerById",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      },
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Customer Secret Key"
+      }
+    }, 
+    "schemas": {
+      "IPLookupRequestDto": {
+        "required": [
+          "ip"
+        ],
+        "type": "object",
+        "properties": {
+          "ip": {
+            "type": "string"
+          },
+          "ipCaptureDateTime": {
+            "type": "string"
+          },
+          "pageId": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "pageName": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "pageUrl": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "urlParameters": {
+            "maxLength": 5000,
+            "minLength": 0,
+            "type": "string"
+          },
+          "pixelVersion": {
+            "type": "string"
+          }
+        },
+        "description": "'ipCaptureDateTime' - Capture time (in UTC) of IP in your system. Required Date time format is : yyyy-MM-dd HH:mm"
+      },
+      "DomainRequestDto": {
+        "type": "object",
+        "properties": {
+          "includeCities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "excludeCities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "includeStates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "excludeStates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "includeCountries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "excludeCountries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "includeUtmSources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "excludeUtmSources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "includeUtmMediums": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "excludeUtmMediums": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "includeUtmCampaigns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "excludeUtmCampaigns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "AutoIPLookupRequestDto": {
+        "type": "object",
+        "properties": {
+          "pageId": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "pageName": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "pageUrl": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "urlParameters": {
+            "maxLength": 5000,
+            "minLength": 0,
+            "type": "string"
+          },
+          "pixelVersion": {
+            "type": "string"
+          }
+        },
+        "description": "'ipCaptureDateTime' - Capture time (in UTC) of IP in your system. Required Date time format is : yyyy-MM-dd HH:mm"
+      },
+      "CustomerRequestDto": {
+        "required": [
+          "customerDomain",
+          "customerName",
+          "enableTracking",
+          "secretKey"
+        ],
+        "type": "object",
+        "properties": {
+          "customerId": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "customerName": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "customerDomain": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "secretKey": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "enableTracking": {
+            "type": "boolean"
+          },
+          "allowedDomains": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CustomerResponseDto": {
+        "type": "object",
+        "properties": {
+          "customerId": {
+            "type": "string"
+          },
+          "customerName": {
+            "type": "string"
+          },
+          "customerDomain": {
+            "type": "string"
+          },
+          "customerSecretKey": {
+            "type": "string"
+          },
+          "enableTracking": {
+            "type": "boolean"
+          },
+          "createdDate": {
+            "type": "string"
+          },
+          "lastModifiedDate": {
+            "type": "string"
+          },
+          "allowedDomains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CustomerUpdateDomainsRequestDto": {
+        "type": "object",
+        "properties": {
+          "allowedDomains": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ReloadSecretKeyRequestDto": {
+        "required": [
+          "secretKey"
+        ],
+        "type": "object",
+        "properties": {
+          "secretKey": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          }
+        }
+      },
+      "IPPageVisitHistoryResponseDto": {
+        "type": "object",
+        "properties": {
+          "pageId": {
+            "type": "string"
+          },
+          "pageHitTime": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "customerName": {
+            "type": "string"
+          },
+          "pageName": {
+            "type": "string"
+          },
+          "pageUrl": {
+            "type": "string"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "urlParameters": {
+            "type": "string"
+          },
+          "ipCity": {
+            "type": "string"
+          },
+          "ipState": {
+            "type": "string"
+          },
+          "ipStateCode": {
+            "type": "string"
+          },
+          "ipCountry": {
+            "type": "string"
+          },
+          "ipCountryCode": {
+            "type": "string"
+          },
+          "marketingSource": {
+            "type": "string"
+          },
+          "utmSource": {
+            "type": "string"
+          },
+          "utmMedium": {
+            "type": "string"
+          },
+          "utmCampaign": {
+            "type": "string"
+          }
+        }
+      },
+      "PagedResponseDtoIPPageVisitHistoryResponseDto": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IPPageVisitHistoryResponseDto"
+            }
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "IPLookupResponseDto": {
+        "type": "object",
+        "properties": {
+          "ip": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "noOfHits": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ipCaptureTime": {
+            "type": "string"
+          },
+          "ipLastHitTime": {
+            "type": "string"
+          },
+          "systemCreatedDate": {
+            "type": "string"
+          },
+          "systemLastModifiedDate": {
+            "type": "string"
+          }
+        }
+      },
+      "PagedResponseDtoIPLookupResponseDto": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IPLookupResponseDto"
+            }
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "PagedResponseDtoString": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "StateResponseDto": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "stateCode": {
+            "type": "string"
+          }
+        }
+      },
+      "IPLocationResponseDto": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "stateCode": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          }
+        }
+      },
+      "PagedResponseDtoIPLocationResponseDto": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IPLocationResponseDto"
+            }
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "CompanyResponseDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "legalName": {
+            "type": "string"
+          },
+          "sitePhoneNumbers": {
+            "type": "string"
+          },
+          "siteEmailAddresses": {
+            "type": "string"
+          },
+          "categorySector": {
+            "type": "string"
+          },
+          "categoryIndustryGroup": {
+            "type": "string"
+          },
+          "categoryIndustry": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "foundedYear": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "location": {
+            "type": "string"
+          },
+          "timeZone": {
+            "type": "string"
+          },
+          "crunchbaseHandle": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string"
+          },
+          "streetNumber": {
+            "type": "string"
+          },
+          "streetName": {
+            "type": "string"
+          },
+          "subPremise": {
+            "type": "string"
+          },
+          "streetAddress": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "stateCode": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/MetricsResponseDto"
+          }
+        }
+      },
+      "IPLookupDomainWiseResponseDto": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string"
+          },
+          "noOfHits": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ipLastHitTime": {
+            "type": "string"
+          },
+          "company": {
+            "$ref": "#/components/schemas/CompanyResponseDto"
+          },
+          "pageVisits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IPPageVisitCountResponseDto"
+            }
+          }
+        }
+      },
+      "IPPageVisitCountResponseDto": {
+        "type": "object",
+        "properties": {
+          "pageName": {
+            "type": "string"
+          },
+          "pageUrl": {
+            "type": "string"
+          },
+          "totalHitCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "lastHitTime": {
+            "type": "string"
+          }
+        }
+      },
+      "MetricsResponseDto": {
+        "type": "object",
+        "properties": {
+          "alexaUsRank": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "alexaGlobalRank": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trafficRank": {
+            "type": "string"
+          },
+          "employees": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "employeesRange": {
+            "type": "string"
+          },
+          "marketCap": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "raised": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "annualRevenue": {
+            "type": "string"
+          },
+          "estimatedAnnualRevenue": {
+            "type": "string"
+          },
+          "fiscalYearEnd": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "IPPageVisitDateResponseDto": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "totalHitCount": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "PagedResponseDtoIPPageVisitDateResponseDto": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IPPageVisitDateResponseDto"
+            }
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "IPPageVisitLocationResponseDto": {
+        "type": "object",
+        "properties": {
+          "ipCity": {
+            "type": "string"
+          },
+          "ipState": {
+            "type": "string"
+          },
+          "ipStateCode": {
+            "type": "string"
+          },
+          "ipCountry": {
+            "type": "string"
+          },
+          "ipCountryCode": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "totalHitCount": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "PagedResponseDtoIPPageVisitLocationResponseDto": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IPPageVisitLocationResponseDto"
+            }
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "PagedResponseDtoIPLookupDomainWiseResponseDto": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IPLookupDomainWiseResponseDto"
+            }
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "CountryResponseDto": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          }
+        }
+      },
+      "CityResponseDto": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "stateCode": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          }
+        }
+      },
+      "IPLookupAttemptsResponseDto": {
+        "type": "object",
+        "properties": {
+          "ip": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "noOfAttempts": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "systemCreatedDate": {
+            "type": "string"
+          },
+          "systemLastModifiedDate": {
+            "type": "string"
+          }
+        }
+      },
+      "PagedResponseDtoIPLookupAttemptsResponseDto": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IPLookupAttemptsResponseDto"
+            }
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "Predicate": {
+        "type": "object"
+      },
+      "PagedResponseDtoCustomerResponseDto": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerResponseDto"
+            }
+          },
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalElements": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    }
+  }
+}

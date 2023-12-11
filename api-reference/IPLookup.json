@@ -16,7 +16,9 @@
   ],
   "security": [
     {
-      "bearerAuth": []
+      "bearerAuth": [
+        "Bearer_Customer Secret Key"
+      ]
     }
   ],
   "tags": [
