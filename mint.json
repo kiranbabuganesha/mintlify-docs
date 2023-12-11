@@ -35,7 +35,7 @@
       "pages": ["api-reference/introduction"]
     },
     {
-      "group": "MDQS",
+      "group": "Multi-Query",
       "pages": [
         {
           "group": "Search API",
@@ -56,11 +56,31 @@
     {
       "group": "IP Lookup Service APIs",
       "pages":[
-        {"group": "Capture IP",
-        "pages":[
-          "api-reference/iplookup/customer-controller/authenticate-customer-using-secret-key"
-        ]
-      }
+        {
+          "group": "Capture API",
+          "pages":[
+            "api-reference/iplookup/ip-lookup-apis/create-ip-lookup-with-customer-secret-key-1"
+          ]
+        },
+        {
+          "group": "Webhook APIs",
+          "pages": [
+            "api-reference/iplookup/customercontroller/put-v1webhooks",
+            "api-reference/iplookup/customercontroller/delete-v1webhooks",
+            "api-reference/iplookup/customercontroller/get-v1webhooks",
+            "api-reference/iplookup/customercontroller/post-v1webhooks",
+            "api-reference/iplookup/customercontroller/patch-v1webhooksdeactivate",
+            "api-reference/iplookup/customercontroller/patch-v1webhooksactivate"
+          ]
+        },
+        {
+          "group": "Customer Controller",
+          "pages": [
+            "api-reference/iplookup/customercontroller/patch-v1customersupdatealloweddomains",
+            "api-reference/iplookup/customercontroller/patch-v1customersenabletracking",
+            "api-reference/iplookup/customercontroller/patch-v1customersdisabletracking"
+          ]
+        }
 
       ]
     }

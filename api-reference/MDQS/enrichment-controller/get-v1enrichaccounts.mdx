@@ -2,3 +2,30 @@
 title: Accounts
 openapi: get /v1/enrich/accounts
 ---
+---
+# Account Schema
+| Attribute                   | Type    | Format  | Example            | Description                                       |
+|-----------------------------|---------|---------|--------------------|---------------------------------------------------|
+| `id`                        | string  |         | `12345`            | Unique identifier associated with the account.     |
+| `name`                      | string  |         | `ABC Corporation`  | Name of the account.                               |
+| `domain`                    | string  |         | `example.com`      | Domain associated with the account.                |
+| `websiteUrl`                | string  |         | `https://www.example.com` | URL of the account's website.              |
+| `linkedinUrl`               | string  |         | `https://www.linkedin.com/company/example` | URL pointing to the account's LinkedIn page.       |
+| `twitterUrl`                | string  |         | `https://twitter.com/example` | URL pointing to the account's Twitter profile.     |
+| `facebookUrl`               | string  |         | `https://www.facebook.com/example` | URL pointing to the account's Facebook page.  |
+| `industry`                  | string  |         | `Technology`       | Industry or sector associated with the account.    |
+| `employeeCount`             | integer | int32   | `100`              | Number of employees working for the account.       |
+| `annualRevenue`             | string  |         | `5 Mil`            | Annual revenue associated with the account.        |
+| `annualRevenueNumeric`      | integer |         | `123`              | Numeric representation of annual revenue.         |
+| `totalFunding`              | integer | int64   | `10 Mil`           | Total funding received by the account.             |
+| `latestFundingRoundDate`    | string  |         | `2023-01-15`       | Date of the latest funding round for the account.  |
+| `latestFundingStage`        | string  |         | `<string>`         | Stage of the latest funding for the account.       |
+| `latestFunding`             | string  |         | `<string>`         | Information about the latest funding of the account|
+| `latestFundingAmountNumeric`| integer |         | `123`              | Numeric amount of the latest funding.              |
+| `phone`                     | string  |         | `<string>`         | Phone number associated with the account.          |
+| `address`                   | string  |         | `<string>`         | Address of the account.                            |
+| `country`                   | string  |         | `<string>`         | Country associated with the account.               |
+| `state`                     | string  |         | `<string>`         | State or region associated with the account.       |
+| `city`                      | string  |         | `<string>`         | City associated with the account.                  |
+| `technologies`              | array   |         | `[ "Technology" ]` | Array of technologies associated with the account. |
+---
