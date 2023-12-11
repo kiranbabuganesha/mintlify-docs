@@ -58,7 +58,6 @@
       "pages":[
         {"group": "Capture IP",
         "pages":[
-          "api-reference/iplookup/ip-lookup-apis/api-to-get-all-cities",
           "api-reference/iplookup/customer-controller/authenticate-customer-using-secret-key"
         ]
       }
