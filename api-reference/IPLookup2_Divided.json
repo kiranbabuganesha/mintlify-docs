@@ -29,12 +29,13 @@
         "operationId": "updateWebhook",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerWebhookId",
@@ -68,12 +69,13 @@
         "operationId": "deleteWebhook",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerWebhookId",
@@ -99,12 +101,13 @@
         "operationId": "getWebhooks",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "predicate",
@@ -135,7 +138,7 @@
         "operationId": "createWebhook",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
@@ -238,12 +241,13 @@
         "operationId": "getDomains_1",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerId",
@@ -440,12 +444,13 @@
         "operationId": "getDomains",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerId",
@@ -517,12 +522,12 @@
         "tags": [
           "IP Lookup APIs"
         ],
-        "summary": "Create IP Lookup with Authorization: Bearer YOUR_ACCESS_TOKEN",
+        "summary": "Create IP Lookup with authorization",
         "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
         "operationId": "captureIPLookupWithCustomerKey",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
@@ -552,7 +557,7 @@
         "tags": [
           "IP Lookup APIs"
         ],
-        "summary": "Create IP Lookup with Origin header AND Authorization: Bearer YOUR_ACCESS_TOKEN",
+        "summary": "Create IP Lookup with Origin header AND authorization",
         "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
         "operationId": "autoCaptureIPLookup",
         "parameters": [
@@ -598,12 +603,13 @@
         "operationId": "getCustomers",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "predicate",
@@ -663,7 +669,7 @@
         "operationId": "createCustomer",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
@@ -696,12 +702,13 @@
         "operationId": "sendWebhook",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerId",
@@ -739,12 +746,13 @@
         "operationId": "authenticateCustomer",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "secretKey",
@@ -774,7 +782,7 @@
         "tags": [
           "IP Lookup APIs"
         ],
-        "summary": "Create IP Lookup with Authorization: Bearer YOUR_ACCESS_TOKEN",
+        "summary": "Create IP Lookup with authorization",
         "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
         "operationId": "captureIPLookupWithAuthorization",
         "parameters": [
@@ -812,12 +820,13 @@
         "operationId": "deactivateWebhook",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerWebhookId",
@@ -843,12 +852,13 @@
         "operationId": "activateWebhook",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerWebhookId",
@@ -874,12 +884,13 @@
         "operationId": "updateAllowedDomains",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerId",
@@ -915,12 +926,13 @@
         "operationId": "reloadSecretKey",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerId",
@@ -956,12 +968,13 @@
         "operationId": "enableTracking",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerId",
@@ -987,12 +1000,13 @@
         "operationId": "disableTracking",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerId",
@@ -1018,7 +1032,7 @@
         "operationId": "updateCustomerAllowedDomains",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
@@ -1051,7 +1065,7 @@
         "operationId": "enableCustomerTracking",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
@@ -1074,7 +1088,7 @@
         "operationId": "disableCustomerTracking",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
@@ -1099,12 +1113,13 @@
         "operationId": "getIPPageVisits",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "secretKey",
@@ -1194,12 +1209,13 @@
         "operationId": "getCustomerIPMappings",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "secretKey",
@@ -1263,12 +1279,13 @@
         "operationId": "getIPLookupsByCustomerAndDomain",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerId",
@@ -1340,12 +1357,13 @@
         "operationId": "getUtmParameters",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "X-Login-Email",
@@ -1433,12 +1451,13 @@
         "operationId": "getStates",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "X-Login-Email",
@@ -1521,12 +1540,13 @@
         "operationId": "getCustomerIPMappingsPaginated",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "secretKey",
@@ -1616,12 +1636,13 @@
         "operationId": "getLocations",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "X-Login-Email",
@@ -1701,12 +1722,13 @@
         "operationId": "getCustomerIPMappingByDomain",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerId",
@@ -1778,12 +1800,13 @@
         "operationId": "getIPPageVisitDatesByDomain",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "X-Login-Email",
@@ -1863,12 +1886,13 @@
         "operationId": "getIPPageVisitsLocations",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "X-Login-Email",
@@ -1957,12 +1981,13 @@
         "operationId": "getIPPageVisitsByDomainAndLocation",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "X-Login-Email",
@@ -2083,12 +2108,13 @@
         "operationId": "getCustomerIPMappingsDomainWise",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerId",
@@ -2170,12 +2196,13 @@
         "operationId": "getCountries",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "X-Login-Email",
@@ -2250,12 +2277,13 @@
         "operationId": "getCities",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "X-Login-Email",
@@ -2338,12 +2366,13 @@
         "operationId": "getCustomerIPMappingAttempts",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "customerId",
@@ -2425,12 +2454,13 @@
         "operationId": "getIPPageVisits_1",
         "parameters": [
           {
-            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+            "name": "authorization",
             "in": "header",
             "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+           "example":"Bearer Your Access Token"  
           },
           {
             "name": "secretKey",

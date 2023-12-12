@@ -1,35 +1,43 @@
 ---
 title: "Contacts"
-description: "Returns a list of fields you can use as input for the Contact Enrich endpoint"
+description: "Returns a list of enriched fields"
 openapi: get /v1/enrich/contacts
 ---
 ---
-# Contacts Level Attributes
-| Attribute                   | Type    | Format | Example              | Description                                       |
-|-----------------------------|---------|--------|----------------------|---------------------------------------------------|
-| `id`                        | string  |        | `12345`              | Unique identifier associated with a record.        |
-| `firstName`                 | string  |        | `John`               | First name of an individual.                       |
-| `lastName`                  | string  |        | `Doe`                | Last name or surname of an individual.             |
-| `jobTitle`                  | string  |        | `Software Engineer`  | Job or professional title/position.                |
-| `seniority`                 | string  |        | `Senior`             | Level of seniority or rank within an organization. |
-| `linkedInUrl`               | string  |        | `https://www.linkedin.com/in/johndoe` | URL pointing to an individual's LinkedIn profile.  |
-| `department`                | string  |        | `Marketing`          | Department or division within an organization.     |
-| `phone`                     | string  |        | `+1234567890`        | Phone number associated with an individual/contact.|
-| `country`                   | string  |        | `United States`      | Country of residence or origin.                    |
-| `state`                     | string  |        | `California`         | State or region within a country.                  |
-| `city`                      | string  |        | `San Francisco`      | City where an individual resides.                  |
-| `account.id`                | string  |        | `987654321`          | Unique identifier associated with the account.     |
-| `account.name`              | string  |        | `ABC Corporation`    | Name of the account.                               |
-| `account.domain`            | string  |        | `example.com`        | Domain associated with the account.                |
-| `account.websiteUrl`        | string  |        | `https://www.example.com` | URL of the account's website.              |
-| `account.linkedinUrl`       | string  |        | `https://www.linkedin.com/company/example` | URL pointing to the account's LinkedIn page.       |
-| `account.twitterUrl`        | string  |        | `https://twitter.com/example` | URL pointing to the account's Twitter profile.     |
-| `account.facebookUrl`       | string  |        | `https://www.facebook.com/example` | URL pointing to the account's Facebook page.  |
-| `account.industry`          | string  |        | `Technology`         | Industry or sector associated with the account.    |
-| `account.employeeCount`     | integer | int32  | `100`                | Number of employees working for the account.       |
-| `account.annualRevenue`     | string  |        | `5 Mil`              | Annual revenue associated with the account.        |
-| `account.latestFunding`     | string  |        | `2023-01-15`         | Information about the latest funding of the account|
-| `account.totalFunding`      | integer | int64  | `10 Mil`             | Total funding received by the account.             |
-| `account.state`             | string  |        | `California`         | State or region associated with the account.       |
-| `account.city`              | string  |        | `San Francisco`      | City associated with the account.                  |
-| `account.technologies`      | array   |        | `Chat GPT, Sprouts`  | Array of technologies associated with the account. |
+## Contacts Level Attributes
+| Attribute                 | Type       | Format           | Example                                  | Description                                |
+|---------------------------|------------|------------------|------------------------------------------|--------------------------------------------|
+| id                        | String     | Text             | `ABCD1234`                               | Unique identifier for the individual       |
+| firstName                 | String     | Text             | `Tony`                                   | First name of the individual               |
+| lastName                  | String     | Text             | `Stark`                                  | Last name of the individual                |
+| jobTitle                  | String     | Text             | `CEO, Engineer, Superhero`               | Job title of the individual                |
+| seniority                 | String     | Text             | `Senior`                                 | Level of seniority of the individual       |
+| linkedInUrl               | String     | URL              | `https://www.linkedin.com/in/tony-stark`| LinkedIn profile URL of the individual     |
+| department                | String     | Text             | `Technology`                             | Department or division of the individual   |
+| phone                     | String     | Phone format     | `+1234567890`                            | Phone number of the individual             |
+| country                   | String     | Text             | `USA`                                    | Country where the individual is located    |
+| state                     | String     | Text             | `NY`                                     | State or region of the individual          |
+| city                      | String     | Text             | `New York`                               | City of residence of the individual        |
+| account.id                | String     | Text             | `ACCT123`                                | Unique identifier for the account          |
+| account.name              | String     | Text             | `Stark Industries`                       | Name of the account                        |
+| account.domain            | String     | Text             | `starkindustries.com`                    | Domain associated with the account         |
+| account.websiteUrl        | String     | URL              | `https://www.starkindustries.com`       | Website URL of the account                 |
+| account.linkedinUrl       | String     | URL              | `https://www.linkedin.com/company/stark-industries`| LinkedIn profile URL of the account|
+| account.twitterUrl        | String     | URL              | `https://twitter.com/stark_industries`  | Twitter profile URL of the account         |
+| account.facebookUrl       | String     | URL              | `https://facebook.com/starkindustries`  | Facebook profile URL of the account        |
+| account.industry          | String     | Text             | `Technology`                             | Industry of the account                    |
+| account.employeeCount     | Integer    | Number           | 5000                                     | Number of employees in the account         |
+| account.annualRevenue     | String     | Text             | `Millions`                               | Annual revenue of the account              |
+| account.annualRevenueNumeric | Integer  | Number           | 10000000                                 | Numeric value of the annual revenue        |
+| account.totalFunding      | Integer    | Number           | 1000000                                  | Total funding received by the account      |
+| account.latestFundingRoundDate | String | Date             | `2023-01-15`                             | Date of the latest funding round           |
+| account.latestFundingStage| String     | Text             | `Series B`                               | Stage of the latest funding round          |
+| account.latestFunding     | String     | Text             | `Venture Capital`                        | Type of the latest funding                 |
+| account.latestFundingAmountNumeric | Integer | Number     | 5000000                                  | Numeric value of the latest funding amount |
+| account.phone             | String     | Phone format     | `+1234567890`                            | Phone number of the account                |
+| account.address           | String     | Text             | `123 Main Street, New York, USA`         | Address of the account                     |
+| account.country           | String     | Text             | `USA`                                    | Country where the account is located       |
+| account.state             | String     | Text             | `NY`                                     | State or region of the account             |
+| account.city              | String     | Text             | `New York`                               | City where the account is located          |
+| account.technologies      | Array      | Text Array       | [`AI`, `Robotics` , `Clean Energy`]       | List of technologies associated with account|
+---

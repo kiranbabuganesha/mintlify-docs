@@ -105,12 +105,13 @@
           "operationId": "searchContacts",
           "parameters": [
             {
-              "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+              "name": "authorization",
               "in": "header",
               "required": true,
               "schema": {
                 "type": "string"
-              }
+              },
+              "example":"Bearer YOUR_ACCESS_TOKEN"
             }
           ],
           "requestBody": {
@@ -145,12 +146,13 @@
           "operationId": "searchAccounts",
           "parameters": [
             {
-              "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+              "name": "authorization",
               "in": "header",
               "required": true,
               "schema": {
                 "type": "string"
-              }
+              },
+              "example":"Bearer YOUR_ACCESS_TOKEN"
             }
           ],
           "requestBody": {
@@ -740,8 +742,9 @@
           "operationId": "enrichContact",
           "parameters": [
             {
-              "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+              "name": "authorization",
               "in": "header",
+              "example":"Bearer YOUR_ACCESS_TOKEN",
               "required": true,
               "schema": {
                 "type": "string"
@@ -778,12 +781,13 @@
           "operationId": "enrichAccount",
           "parameters": [
             {
-              "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
+              "name": "authorization",
               "in": "header",
               "required": true,
               "schema": {
                 "type": "string"
-              }
+              },
+              "example":"Bearer YOUR_ACCESS_TOKEN"
             },
             {
               "name": "Domain",
