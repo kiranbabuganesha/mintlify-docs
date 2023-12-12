@@ -1,20 +1,5 @@
 ---
 title: "Accounts"
+description: "Returns a list of Accounts from Sprouts data that meet the specified search criteria"
 openapi: post /v1/search/accounts
 ---
----
-# Account Level Attributes
-| Attribute        | Type    | Format  | Example            | Description                                       |
-|------------------|---------|---------|--------------------|---------------------------------------------------|
-| `annualRevenue`  | string  |         | `5 Mil`        | Annual revenue associated with the account.        |
-| `city`           | string  |         | `San Francisco `       | City associated with the account.                  |
-| `country`        | string  |         | `United States`  | Country associated with the account.               |
-| `employeeCount`  | integer | int32   | `100`              | Number of employees working for the account.       |
-| `id`             | string  |         | `987654321`      | Unique identifier associated with the account.     |
-| `industry`       | string  |         | `Technology`     | Industry or sector associated with the account.    |
-| `items`          | string  |         | `Example item`   | (Missing context or description for `items`)       |
-| `latestFunding`  | string  |         | `2023-01-15`     | Information about the latest funding of the account.|
-| `name`           | string  |         | `ABC Corporation`| Name of the account.                               |
-| `state`          | string  |         | `California`     | State or region associated with the account.       |
-| `technologies`   | array   |         | `Chat GPT, Sprouts` | Array of technologies associated with the account. |
-| `totalFunding`   | integer | int64   | `10 Mil`         | Total funding received by the account.             |

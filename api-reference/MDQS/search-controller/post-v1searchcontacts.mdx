@@ -1,36 +1,5 @@
 ---
 title: "Contacts"
+description: "Returns a list of Contacts from Sprouts data that meet the specified search criteria"
 openapi: post /v1/search/contacts
 ---
----
-# Contact Level Attributes
-| Attribute       | Type   | Format | Example              | Description                                       |
-|-----------------|--------|--------|----------------------|---------------------------------------------------|
-| `city`          | string |        | `San Francisco`         | City where an individual resides.                  |
-| `country`       | string |        | `United States`    | Country of residence or origin.                    |
-| `department`    | string |        | `Marketing`        | Department or division within an organization.     |
-| `firstName`     | string |        | `John`             | First name of an individual.                       |
-| `id`            | string |        | `12345`            | Unique identifier associated with a record.        |
-| `jobTitle`      | string |        | `Software Engineer`| Job or professional title/position.                |
-| `lastName`      | string |        | `Doe`              | Last name or surname of an individual.             |
-| `linkedInUrl`   | string |        | `https://www.linkedin.com/in/johndoe` | URL pointing to an individual's LinkedIn profile.  |
-| `phone`         | string |        | `+1234567890`     | Phone number associated with an individual/contact.|
-| `seniority`     | string |        | `Senior`           | Level of seniority or rank within an organization. |
-| `state`         | string |        | `California`       | State or region within a country.                  |
-
-# Account Level Attributes
-
-| Attribute        | Type    | Format  | Example            | Description                                       |
-|------------------|---------|---------|--------------------|---------------------------------------------------|
-| `annualRevenue`  | string  |         | `5 Mil`        | Annual revenue associated with the account.        |
-| `city`           | string  |         | `San Francisco `       | City associated with the account.                  |
-| `country`        | string  |         | `United States`  | Country associated with the account.               |
-| `employeeCount`  | integer | int32   | `100`              | Number of employees working for the account.       |
-| `id`             | string  |         | `987654321`      | Unique identifier associated with the account.     |
-| `industry`       | string  |         | `Technology`     | Industry or sector associated with the account.    |
-| `items`          | string  |         | `Example item`   | (Missing context or description for `items`)       |
-| `latestFunding`  | string  |         | `2023-01-15`     | Information about the latest funding of the account.|
-| `name`           | string  |         | `ABC Corporation`| Name of the account.                               |
-| `state`          | string  |         | `California`     | State or region associated with the account.       |
-| `technologies`   | array   |         | `Chat GPT, Sprouts` | Array of technologies associated with the account. |
-| `totalFunding`   | integer | int64   | `10 Mil`         | Total funding received by the account.             |

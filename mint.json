@@ -63,7 +63,7 @@
           ]
         },
         {
-          "group": "Webhook APIs",
+          "group": "Webhook",
           "pages": [
             "api-reference/iplookup/customercontroller/get-v1webhooks",
             "api-reference/iplookup/customercontroller/post-v1webhooks",
@@ -74,7 +74,7 @@
           ]
         },
         {
-          "group": "Customer Controller",
+          "group": "Customer Controller API",
           "pages": [
             "api-reference/iplookup/customercontroller/patch-v1customersenabletracking",
             "api-reference/iplookup/customercontroller/patch-v1customersdisabletracking",

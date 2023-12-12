@@ -29,7 +29,7 @@
         "operationId": "updateWebhook",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -68,7 +68,7 @@
         "operationId": "deleteWebhook",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -99,7 +99,7 @@
         "operationId": "getWebhooks",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -135,7 +135,7 @@
         "operationId": "createWebhook",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -238,7 +238,7 @@
         "operationId": "getDomains_1",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -440,7 +440,7 @@
         "operationId": "getDomains",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -517,12 +517,12 @@
         "tags": [
           "IP Lookup APIs"
         ],
-        "summary": "Create IP Lookup with Customer Secret Key",
+        "summary": "Create IP Lookup with Authorization: Bearer YOUR_ACCESS_TOKEN",
         "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
         "operationId": "captureIPLookupWithCustomerKey",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -552,7 +552,7 @@
         "tags": [
           "IP Lookup APIs"
         ],
-        "summary": "Create IP Lookup with Origin header AND Customer Secret Key",
+        "summary": "Create IP Lookup with Origin header AND Authorization: Bearer YOUR_ACCESS_TOKEN",
         "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
         "operationId": "autoCaptureIPLookup",
         "parameters": [
@@ -598,7 +598,7 @@
         "operationId": "getCustomers",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -663,7 +663,7 @@
         "operationId": "createCustomer",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -696,7 +696,7 @@
         "operationId": "sendWebhook",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -739,7 +739,7 @@
         "operationId": "authenticateCustomer",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -774,7 +774,7 @@
         "tags": [
           "IP Lookup APIs"
         ],
-        "summary": "Create IP Lookup with Customer Secret Key",
+        "summary": "Create IP Lookup with Authorization: Bearer YOUR_ACCESS_TOKEN",
         "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
         "operationId": "captureIPLookupWithAuthorization",
         "parameters": [
@@ -812,7 +812,7 @@
         "operationId": "deactivateWebhook",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -843,7 +843,7 @@
         "operationId": "activateWebhook",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -874,7 +874,7 @@
         "operationId": "updateAllowedDomains",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -915,7 +915,7 @@
         "operationId": "reloadSecretKey",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -956,7 +956,7 @@
         "operationId": "enableTracking",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -987,7 +987,7 @@
         "operationId": "disableTracking",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1018,7 +1018,7 @@
         "operationId": "updateCustomerAllowedDomains",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1051,7 +1051,7 @@
         "operationId": "enableCustomerTracking",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1074,7 +1074,7 @@
         "operationId": "disableCustomerTracking",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1099,7 +1099,7 @@
         "operationId": "getIPPageVisits",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1194,7 +1194,7 @@
         "operationId": "getCustomerIPMappings",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1263,7 +1263,7 @@
         "operationId": "getIPLookupsByCustomerAndDomain",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1340,7 +1340,7 @@
         "operationId": "getUtmParameters",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1433,7 +1433,7 @@
         "operationId": "getStates",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1521,7 +1521,7 @@
         "operationId": "getCustomerIPMappingsPaginated",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1616,7 +1616,7 @@
         "operationId": "getLocations",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1701,7 +1701,7 @@
         "operationId": "getCustomerIPMappingByDomain",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1778,7 +1778,7 @@
         "operationId": "getIPPageVisitDatesByDomain",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1863,7 +1863,7 @@
         "operationId": "getIPPageVisitsLocations",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -1957,7 +1957,7 @@
         "operationId": "getIPPageVisitsByDomainAndLocation",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -2083,7 +2083,7 @@
         "operationId": "getCustomerIPMappingsDomainWise",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -2170,7 +2170,7 @@
         "operationId": "getCountries",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -2250,7 +2250,7 @@
         "operationId": "getCities",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -2338,7 +2338,7 @@
         "operationId": "getCustomerIPMappingAttempts",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
@@ -2425,7 +2425,7 @@
         "operationId": "getIPPageVisits_1",
         "parameters": [
           {
-            "name": "Customer Secret Key",
+            "name": "Authorization: Bearer YOUR_ACCESS_TOKEN",
             "in": "header",
             "required": true,
             "schema": {
