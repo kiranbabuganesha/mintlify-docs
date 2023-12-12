@@ -751,7 +751,7 @@
               }
             },
             {
-              "name": "Prospect e-mail id",
+              "name": "email",
               "in": "query",
               "required": true,
               "schema": {
@@ -790,7 +790,7 @@
               "example":"Bearer YOUR_ACCESS_TOKEN"
             },
             {
-              "name": "Domain",
+              "name": "domain",
               "in": "query",
               "required": true,
               "schema": {
@@ -1047,12 +1047,6 @@
                 "DESC"
               ]
             },
-            "customerId": {
-              "type": "string"
-            },
-            "databaseName": {
-              "type": "string"
-            },
             "filters": {
               "type": "array",
               "items": {
@@ -1082,9 +1076,6 @@
           "type": "object",
           "properties": {
             "id": {
-              "type": "string"
-            },
-            "database": {
               "type": "string"
             },
             "name": {
