@@ -1,0 +1,22 @@
+---
+title: Filters Information
+---
+
+The search API includes various filters that can be used for querying and retrieving specific information.
+
+|Filter Name            |Filter Key             | Filter Data                                                                                                                    |
+|-----------------------|-----------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Company               |company                | **includes**: `id1`, `id2`<br /><br /> **excludes**: `id1`, `id2`                                                                             |
+| Location              | location              | **includes**: `Label1`, `Label2`<br /><br /> **excludes**: `Label1`, `Label2`                                                                 |
+| Industry              | industry              | **includes**: `id1`, `id2`<br /><br /> **excludes**: `id1`, `id2`                                                                             |
+| Company Keyword       | companyKeyword        | **includes**: `Label1`, `Label2`<br /><br /> **excludes**: `Label1`, `Label2`<br /><br /> **includeAll**: `Label1`, `Label2`                             |
+| Revenue               | revenue               | **min**: 10, **max**: 100                                                                                                              |
+| Total Employee Count  | totalEmployeeCount    | **min**: 10, **max**: 100                                                                                                              |
+| Employee By Dept.     | employeeByDepartment  | **finance**: \{ min: 10, max: 100 }<br /><br /> **hr**: \{ min: 10, max: 100 }                                                                       |
+| Buying Intent         | buyingIntent          | **intentScores**: `high`,`low`,`medium`,`none`<br /><br /> **intentTopics**: `id1`, `id2`<br /><br /> **timeFrame**: `yesterday`                          |
+| Technology            | technology            | **includes**: `id1`, `id2`<br /><br /> **includeAll**: `id1`, `id2`                                                                           |
+| Funding               | funding               | **stages**: `id1`, `id2`<br /><br /> **lastFundingDate**: \{ min: 10, max: 100 }<br /><br /> **lastFundingAmount**: \{ min: 10, max: 100 }                    |
+| Founded Year          | foundedYear           | **yearRange**: \{ min: 10, max: 100 }<br /><br /> **includeUnknown**: true                                                                         |
+| Job Opening           | jobOpening            | **jobTitles**: `Label1`, `Label2`<br /><br /> **jobLocations**: `Label1`, `Label2`<br /><br /> **jobOpenCurrently**: \{ min: 10, max: 100 }<br /><br /> **jobOpenedTimeFrame**: `Last 7 days` |
+| Headcount Growth      | headCountGrowth       | **growthRange**: \{ min: 10, max: 100 }<br /><br /> **timeFrame**: `3`<br /><br /> **department**: `label`                                                      |
+| Retail Location       | retailLocation        | **min**: 10, **max**: 100                                                                                                              |

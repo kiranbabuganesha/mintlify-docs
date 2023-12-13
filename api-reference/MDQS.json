@@ -28,7 +28,9 @@
               "required": true,
               "schema": {
                 "type": "string"
-              }
+              },
+              "example":"Bearer Your_Access_Token",
+              "description":"Please enter your access token"
             },
             {
               "name": "X-Login-Email",
@@ -69,7 +71,9 @@
               "required": true,
               "schema": {
                 "type": "string"
-              }
+              },
+              "example":"Bearer Your_Access_Token",
+              "description":"Please enter your access token"
             },
             {
               "name": "X-Login-Email",
@@ -111,7 +115,8 @@
               "schema": {
                 "type": "string"
               },
-              "example":"Bearer YOUR_ACCESS_TOKEN"
+              "example":"Bearer Your_Access_Token",
+              "description":"Please enter your access token"
             }
           ],
           "requestBody": {
@@ -152,7 +157,8 @@
               "schema": {
                 "type": "string"
               },
-              "example":"Bearer YOUR_ACCESS_TOKEN"
+              "example":"Bearer Your_Access_Token",
+              "description":"Please enter your access token"
             }
           ],
           "requestBody": {
@@ -393,7 +399,9 @@
               "required": true,
               "schema": {
                 "type": "string"
-              }
+              },
+              "example":"Bearer Your_Access_Token",
+              "description":"Please enter your access token"
             },
             {
               "name": "X-Login-Email",
@@ -449,7 +457,9 @@
               "required": true,
               "schema": {
                 "type": "string"
-              }
+              },
+              "example":"Bearer Your_Access_Token",
+              "description":"Please enter your access token"
             },
             {
               "name": "X-Login-Email",
@@ -693,7 +703,9 @@
               "required": true,
               "schema": {
                 "type": "string"
-              }
+              },
+              "example":"Bearer Your_Access_Token",
+              "description":"Please enter your access token"
             },
             {
               "name": "X-Login-Email",
@@ -744,11 +756,12 @@
             {
               "name": "authorization",
               "in": "header",
-              "example":"Bearer YOUR_ACCESS_TOKEN",
               "required": true,
               "schema": {
                 "type": "string"
-              }
+              },
+              "example":"Bearer Your_Access_Token",
+              "description":"Please enter your access token"
             },
             {
               "name": "email",
@@ -787,7 +800,8 @@
               "schema": {
                 "type": "string"
               },
-              "example":"Bearer YOUR_ACCESS_TOKEN"
+              "example":"Bearer Your_Access_Token",
+              "description":"Please enter your access token"
             },
             {
               "name": "domain",
