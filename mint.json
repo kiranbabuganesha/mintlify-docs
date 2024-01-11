@@ -38,18 +38,17 @@
       "group": "Leads & Prospects",
       "pages": [
         {
-          "group": "Search API",
+          "group": "Contacts API",
           "pages": [
-            "api-reference/MDQS/search-controller/post-v1searchcontacts",
-            "api-reference/MDQS/search-controller/post-v1searchaccounts",
-            "api-reference/filters-information"
+            "api-reference-v2/MDQS2/contact-controller/post-v1contactssearch",
+            "api-reference-v2/MDQS2/contact-controller/get-v1contactsenrich"
           ]
         },
         {
-          "group": "Enrichment API",
+          "group": "Accounts API",
           "pages": [
-            "api-reference/MDQS/enrichment-controller/get-v1enrichcontacts",
-            "api-reference/MDQS/enrichment-controller/get-v1enrichaccounts"
+            "api-reference-v2/MDQS2/account-controller/post-v1accountssearch",
+            "api-reference-v2/MDQS2/account-controller/get-v1accountsenrich"
           ]
         }     
       ]

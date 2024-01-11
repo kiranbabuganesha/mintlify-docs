@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://qams.sprouts.ai:8000"
+      "url": "https://api.sprouts.ai"
     }
   ],
   "tags": [
