@@ -3,3 +3,31 @@ title: "Search"
 description: "Returns a list of Accounts from Sprouts data that meet the specified search criteria"
 openapi: post /v1/accounts/search
 ---
+---
+## Account Level Attributes
+
+| Attribute        | Type       | Format         | Example                         | Description                              |
+|------------------|------------|----------------|---------------------------------|------------------------------------------|
+| id               | String     | Text           | `ABC123`                        | Unique identifier for the record         |
+| database         | String     | Text           | `CompaniesDB`                   | Database storing company information     |
+| name             | String     | Text           | `Stark Industries`               | Name of the company                      |
+| logo_url          | String     | URL            | `https://www.example.com/logo`  | URL of the company's logo                |
+| website_url       | String     | URL            | `https://www.starkindustries.com`| Website URL of the company               |
+| linkedin_url      | String     | URL            | `https://www.linkedin.com/company/stark-industries`| LinkedIn profile URL       |
+| twitter_url       | String     | URL            | `https://twitter.com/stark_industries`| Twitter profile URL              |
+| facebook_url      | String     | URL            | `https://facebook.com/starkindustries`| Facebook profile URL          |
+| industry         | String     | Text           | `Technology`                    | Industry or sector of the company       |
+| raw_address       | String     | Text           | `123 Main Street, New York, USA` | Full address of the company             |
+| city             | String     | Text           | `New York`                      | City where the company is located       |
+| street_address    | String     | Text           | `123 Main Street`               | Street address of the company           |
+| state            | String     | Text           | `NY`                            | State or region                          |
+| country          | String     | Text           | `USA`                           | Country where the company is situated   |
+| postal_code       | String     | Text           | `10001`                         | Postal code or ZIP code                  |
+| founded_year      | Integer    | Number         | 1939                            | Year when the company was founded       |
+| employee_count    | String     | Text           | `5000+`                         | Approximate count of employees           |
+| retail_location   | String     | Text           | `Yes`                           | Indicates if the company has retail locations|
+| domain           | String     | Text           | `starkindustries.com`           | Company's domain name                    |
+| target_profile    | Boolean    | True/False     | `true`                            | Indicates if this profile is a target    |
+| page             | Integer    | Number         | `1`                               | Current page number in pagination        |
+| size             | Integer    | Number         | `20`                              | Number of records displayed per page     |
+| total_elements    | Integer    | Number         | `500`                             | Total number of company records          |
