@@ -1768,12 +1768,6 @@
               "DESC"
             ]
           },
-          "customer_id": {
-            "type": "string"
-          },
-          "database_name": {
-            "type": "string"
-          },
           "filters": {
             "type": "array",
             "items": {
