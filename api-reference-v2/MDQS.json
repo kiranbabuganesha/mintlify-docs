@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://devapi.sprouts.ai"
+      "url": "https://api.sprouts.ai"
     }
   ],
   "paths": {
