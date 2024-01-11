@@ -26,7 +26,7 @@ openapi: get /v1/contacts/enrich
 | account.twitter_url     | String     | URL              | `https://twitter.com/stark_industries`  | Twitter profile URL of the account         |
 | account.facebook_url    | String     | URL              | `https://facebook.com/starkindustries`  | Facebook profile URL of the account        |
 | account.industry          | String     | Text             | `Technology`                             | Industry of the account                    |
-| account.employeeCount     | Integer    | Number           | `5000`                                     | Number of employees in the account         |
+| account.employee_count     | Integer    | Number           | `5000`                                     | Number of employees in the account         |
 | account.annual_revenue     | String     | Text             | `Millions`                               | Annual revenue of the account              |
 | account.annual_revenue_numeric | Integer  | Number           | `10000000`                                 | Numeric value of the annual revenue        |
 | account.total_funding      | Integer    | Number           | `1000000`                                  | Total funding received by the account      |
@@ -40,4 +40,3 @@ openapi: get /v1/contacts/enrich
 | account.state             | String     | Text             | `NY`                                     | State or region of the account             |
 | account.city              | String     | Text             | `New York`                               | City where the account is located          |
 | account.technologies      | Array      | Text Array       | [`AI`, `Robotics` , `Clean Energy`]       | List of technologies associated with account|
----
