@@ -38,19 +38,19 @@
       "group": "Leads & Prospects",
       "pages": [
         {
-          "group": "Contacts API",
-          "pages": [
-            "api-reference-v2/MDQS2/contact-controller/post-v1contactssearch",
-            "api-reference-v2/MDQS2/contact-controller/get-v1contactsenrich"
-          ]
-        },
-        {
           "group": "Accounts API",
           "pages": [
             "api-reference-v2/MDQS2/account-controller/post-v1accountssearch",
             "api-reference-v2/MDQS2/account-controller/get-v1accountsenrich"
           ]
-        }     
+        },
+        {
+          "group": "Contacts API",
+          "pages": [
+            "api-reference-v2/MDQS2/contact-controller/post-v1contactssearch",
+            "api-reference-v2/MDQS2/contact-controller/get-v1contactsenrich"
+          ]
+        }   
       ]
     },
     {
