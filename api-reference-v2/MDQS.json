@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://api.sprouts.ai"
+      "url": "https://devmdqs.sprouts.ai"
     }
   ],
   "paths": {
@@ -22,14 +22,6 @@
         ],
         "operationId": "createTargetProfileContact",
         "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "X-Login-Email",
             "in": "header",
@@ -63,14 +55,6 @@
         ],
         "operationId": "createTargetProfileAccount",
         "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "X-Login-Email",
             "in": "header",
@@ -165,14 +149,7 @@
         ],
         "operationId": "searchContacts",
         "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
+
         ],
         "requestBody": {
           "content": {
@@ -205,14 +182,7 @@
         ],
         "operationId": "searchAccounts",
         "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
+
         ],
         "requestBody": {
           "content": {
@@ -508,14 +478,6 @@
         "operationId": "searchContacts_3",
         "parameters": [
           {
-            "name": "authorization",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "X-Login-Email",
             "in": "header",
             "required": true,
@@ -564,14 +526,6 @@
         "operationId": "searchAccounts_3",
         "parameters": [
           {
-            "name": "authorization",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "X-Login-Email",
             "in": "header",
             "required": true,
@@ -619,14 +573,7 @@
         ],
         "operationId": "searchContacts_4",
         "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
+
         ],
         "requestBody": {
           "content": {
@@ -659,14 +606,7 @@
         ],
         "operationId": "searchAccounts_4",
         "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
+
         ],
         "requestBody": {
           "content": {
@@ -1128,14 +1068,6 @@
         "operationId": "getContactById_2",
         "parameters": [
           {
-            "name": "authorization",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "X-Login-Email",
             "in": "header",
             "required": true,
@@ -1248,14 +1180,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1282,14 +1206,6 @@
           {
             "name": "domain",
             "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "authorization",
-            "in": "header",
             "required": true,
             "schema": {
               "type": "string"

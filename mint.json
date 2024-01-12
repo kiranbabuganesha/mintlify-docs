@@ -50,7 +50,8 @@
             "api-reference-v2/MDQS2/contact-controller/post-v1contactssearch",
             "api-reference-v2/MDQS2/contact-controller/get-v1contactsenrich"
           ]
-        }   
+        },
+            "api-reference/filters-information" 
       ]
     },
     {
@@ -87,5 +88,10 @@
     ],
   "footerSocials": {
     "linkedin": "https://www.linkedin.com/company/sprouts-ai/mycompany/"
+  },
+  "api": {
+    "auth": {
+        "method": "bearer"
+    }
   }
 }
