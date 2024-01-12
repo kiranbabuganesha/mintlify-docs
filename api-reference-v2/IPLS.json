@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Sprouts IP Lookup",
-    "version": "1.0.0",
+    "title": "IP Lookup Service API",
+    "version": "3.0.0",
     "contact": {
       "name": "SproutsAI",
       "url": "https://www.sprouts.ai",
@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://api.sprouts.ai"
+      "url": "https://wa.sprouts.ai:3000"
     }
   ],
   "tags": [
@@ -31,11 +31,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerWebhookId",
@@ -71,11 +70,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerWebhookId",
@@ -103,11 +101,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "predicate",
@@ -124,7 +121,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/PagedResponseDtoCustomerWebhookResponseDto"
+                  "$ref": "#/components/schemas/PagedSnakeCaseResponseDtoCustomerWebhookResponseDto"
                 }
               }
             }
@@ -140,7 +137,7 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -231,6 +228,62 @@
         }
       }
     },
+    "/v1/iplookups/{customerId}/pageViews": {
+      "post": {
+        "tags": [
+          "IP Lookup APIs"
+        ],
+        "summary": "List of Page Views for provided domains",
+        "description": "This API provide page view information and first and last page info for provided domains.",
+        "operationId": "getPageViews",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PageViewRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PageViewResponseDto"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/iplookups/{customerId}/domains": {
       "get": {
         "tags": [
@@ -243,11 +296,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerId",
@@ -446,11 +498,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerId",
@@ -522,12 +573,12 @@
         "tags": [
           "IP Lookup APIs"
         ],
-        "summary": "Create IP Lookup with authorization",
+        "summary": "Create IP Lookup with Customer Secret Key",
         "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
         "operationId": "captureIPLookupWithCustomerKey",
         "parameters": [
           {
-            "name": "authorization",
+            "name": "secretKey",
             "in": "header",
             "required": true,
             "schema": {
@@ -557,7 +608,7 @@
         "tags": [
           "IP Lookup APIs"
         ],
-        "summary": "Create IP Lookup with Origin header AND authorization",
+        "summary": "Create IP Lookup with Origin header AND Customer Secret Key",
         "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
         "operationId": "autoCaptureIPLookup",
         "parameters": [
@@ -605,11 +656,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "predicate",
@@ -671,7 +721,7 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -704,11 +754,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerId",
@@ -748,11 +797,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "secretKey",
@@ -782,7 +830,7 @@
         "tags": [
           "IP Lookup APIs"
         ],
-        "summary": "Create IP Lookup with authorization",
+        "summary": "Create IP Lookup with Customer Secret Key",
         "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
         "operationId": "captureIPLookupWithAuthorization",
         "parameters": [
@@ -799,7 +847,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/IPLookupRequestDto"
+                "$ref": "#/components/schemas/IPLookupSnakeCaseRequestDto"
               }
             }
           },
@@ -822,11 +870,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerWebhookId",
@@ -854,11 +901,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerWebhookId",
@@ -886,11 +932,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerId",
@@ -928,11 +973,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerId",
@@ -970,11 +1014,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerId",
@@ -1002,11 +1045,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerId",
@@ -1034,7 +1076,7 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -1067,7 +1109,7 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -1090,7 +1132,7 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
             }
@@ -1115,11 +1157,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "secretKey",
@@ -1211,11 +1252,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "secretKey",
@@ -1281,11 +1321,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerId",
@@ -1359,11 +1398,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "X-Login-Email",
@@ -1453,11 +1491,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "X-Login-Email",
@@ -1542,11 +1579,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "secretKey",
@@ -1638,11 +1674,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "X-Login-Email",
@@ -1724,11 +1759,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerId",
@@ -1802,11 +1836,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "X-Login-Email",
@@ -1888,11 +1921,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "X-Login-Email",
@@ -1983,11 +2015,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "X-Login-Email",
@@ -2110,11 +2141,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerId",
@@ -2198,11 +2228,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "X-Login-Email",
@@ -2279,11 +2308,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "X-Login-Email",
@@ -2368,11 +2396,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "customerId",
@@ -2456,11 +2483,10 @@
           {
             "name": "authorization",
             "in": "header",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "string"
-            },
-           "example":"Bearer Your Access Token"  
+            }
           },
           {
             "name": "secretKey",
@@ -2629,6 +2655,7 @@
         "type": "object",
         "properties": {
           "ip": {
+            "pattern": "^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
             "type": "string"
           },
           "ipCaptureDateTime": {
@@ -2694,6 +2721,96 @@
           },
           "sessionStartTime": {
             "type": "string"
+          }
+        }
+      },
+      "PageViewRequestDto": {
+        "required": [
+          "domains"
+        ],
+        "type": "object",
+        "properties": {
+          "domains": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "IPPageVisitHistoryResponseDto": {
+        "type": "object",
+        "properties": {
+          "pageId": {
+            "type": "string"
+          },
+          "pageHitTime": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "customerName": {
+            "type": "string"
+          },
+          "pageName": {
+            "type": "string"
+          },
+          "pageUrl": {
+            "type": "string"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "urlParameters": {
+            "type": "string"
+          },
+          "ipCity": {
+            "type": "string"
+          },
+          "ipState": {
+            "type": "string"
+          },
+          "ipStateCode": {
+            "type": "string"
+          },
+          "ipCountry": {
+            "type": "string"
+          },
+          "ipCountryCode": {
+            "type": "string"
+          },
+          "marketingSource": {
+            "type": "string"
+          },
+          "utmSource": {
+            "type": "string"
+          },
+          "utmMedium": {
+            "type": "string"
+          },
+          "utmCampaign": {
+            "type": "string"
+          }
+        }
+      },
+      "PageViewResponseDto": {
+        "type": "object",
+        "properties": {
+          "totalVisits": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "uniqueVisits": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "firstPageSeen": {
+            "$ref": "#/components/schemas/IPPageVisitHistoryResponseDto"
+          },
+          "lastPageSeen": {
+            "$ref": "#/components/schemas/IPPageVisitHistoryResponseDto"
           }
         }
       },
@@ -2912,6 +3029,96 @@
           }
         }
       },
+      "BrowserInfoSnakeCaseRequestDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "user_agent": {
+            "type": "string"
+          }
+        }
+      },
+      "IPLookupSnakeCaseRequestDto": {
+        "required": [
+          "ip"
+        ],
+        "type": "object",
+        "properties": {
+          "ip": {
+            "pattern": "^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$",
+            "type": "string"
+          },
+          "ip_capture_date_time": {
+            "type": "string"
+          },
+          "page_id": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "page_name": {
+            "maxLength": 255,
+            "minLength": 0,
+            "type": "string"
+          },
+          "page_url": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "url_parameters": {
+            "maxLength": 5000,
+            "minLength": 0,
+            "type": "string"
+          },
+          "pixel_version": {
+            "type": "string"
+          },
+          "screen": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "referrer": {
+            "type": "string"
+          },
+          "browser_info": {
+            "$ref": "#/components/schemas/BrowserInfoSnakeCaseRequestDto"
+          },
+          "os_info": {
+            "$ref": "#/components/schemas/OSInfoSnakeCaseRequestDto"
+          },
+          "session": {
+            "$ref": "#/components/schemas/SessionSnakeCaseRequestDto"
+          }
+        },
+        "description": "'ipCaptureDateTime' - Capture time (in UTC) of IP in your system. Required Date time format is : yyyy-MM-dd HH:mm"
+      },
+      "OSInfoSnakeCaseRequestDto": {
+        "type": "object",
+        "properties": {
+          "platform": {
+            "type": "string"
+          }
+        }
+      },
+      "SessionSnakeCaseRequestDto": {
+        "type": "object",
+        "properties": {
+          "session_id": {
+            "type": "string"
+          },
+          "session_start_time": {
+            "type": "string"
+          }
+        }
+      },
       "CustomerUpdateDomainsRequestDto": {
         "type": "object",
         "properties": {
@@ -2943,7 +3150,7 @@
       "CustomerWebhookResponseDto": {
         "type": "object",
         "properties": {
-          "webhookId": {
+          "webhook_id": {
             "type": "string"
           },
           "endpoint": {
@@ -2958,10 +3165,10 @@
           "secret": {
             "type": "string"
           },
-          "createdDate": {
+          "created_date": {
             "type": "string"
           },
-          "lastModifiedDate": {
+          "last_modified_date": {
             "type": "string"
           },
           "active": {
@@ -2969,7 +3176,7 @@
           }
         }
       },
-      "PagedResponseDtoCustomerWebhookResponseDto": {
+      "PagedSnakeCaseResponseDtoCustomerWebhookResponseDto": {
         "type": "object",
         "properties": {
           "list": {
@@ -2986,65 +3193,9 @@
             "type": "integer",
             "format": "int32"
           },
-          "totalElements": {
+          "total_elements": {
             "type": "integer",
             "format": "int64"
-          }
-        }
-      },
-      "IPPageVisitHistoryResponseDto": {
-        "type": "object",
-        "properties": {
-          "pageId": {
-            "type": "string"
-          },
-          "pageHitTime": {
-            "type": "string"
-          },
-          "domain": {
-            "type": "string"
-          },
-          "customerName": {
-            "type": "string"
-          },
-          "pageName": {
-            "type": "string"
-          },
-          "pageUrl": {
-            "type": "string"
-          },
-          "companyName": {
-            "type": "string"
-          },
-          "urlParameters": {
-            "type": "string"
-          },
-          "ipCity": {
-            "type": "string"
-          },
-          "ipState": {
-            "type": "string"
-          },
-          "ipStateCode": {
-            "type": "string"
-          },
-          "ipCountry": {
-            "type": "string"
-          },
-          "ipCountryCode": {
-            "type": "string"
-          },
-          "marketingSource": {
-            "type": "string"
-          },
-          "utmSource": {
-            "type": "string"
-          },
-          "utmMedium": {
-            "type": "string"
-          },
-          "utmCampaign": {
-            "type": "string"
           }
         }
       },
