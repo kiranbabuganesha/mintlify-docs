@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://devmdqs.sprouts.ai"
+      "url": "https://api.sprouts.ai"
     }
   ],
   "paths": {

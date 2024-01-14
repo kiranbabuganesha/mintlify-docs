@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://wa.sprouts.ai:3000/"
+      "url": "https://api.sprouts.ai/"
     }
   ],
   "tags": [
@@ -752,16 +752,6 @@
         "summary": "Create IP Lookup with Customer Secret Key",
         "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
         "operationId": "captureIPLookupWithAuthorization",
-        "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
