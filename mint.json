@@ -60,26 +60,26 @@
         {
           "group": "Capture API",
           "pages":[
-            "api-reference-v2/IPLS/ip-lookup-apis/create-ip-lookup-with-customer-secret-key-1"
+            "api-reference-v2/IPLS2/ip-lookup-apis/create-ip-lookup-with-customer-secret-key-1"
           ]
         },
         {
           "group": "Webhook",
           "pages": [
-            "api-reference-v2/IPLS/customercontroller/get-v1webhooks",
-            "api-reference-v2/IPLS/customercontroller/post-v1webhooks",
-            "api-reference-v2/IPLS/customercontroller/put-v1webhooks",
-            "api-reference-v2/IPLS/customercontroller/delete-v1webhooks",
-            "api-reference-v2/IPLS/customercontroller/patch-v1webhooksactivate",
-            "api-reference-v2/IPLS/customercontroller/patch-v1webhooksdeactivate"
+            "api-reference-v2/IPLS2/customercontroller/get-v1webhooks",
+            "api-reference-v2/IPLS2/customercontroller/post-v1webhooks",
+            "api-reference-v2/IPLS2/customercontroller/put-v1webhooks",
+            "api-reference-v2/IPLS2/customercontroller/delete-v1webhooks",
+            "api-reference-v2/IPLS2/customercontroller/patch-v1webhooksactivate",
+            "api-reference-v2/IPLS2/customercontroller/patch-v1webhooksdeactivate"
           ]
         },
         {
           "group": "Customer Controller API",
           "pages": [
-            "api-reference-v2/IPLS/customercontroller/patch-v1customersenabletracking",
-            "api-reference-v2/IPLS/customercontroller/patch-v1customersdisabletracking",
-            "api-reference-v2/IPLS/customercontroller/patch-v1customersupdatealloweddomains"
+            "api-reference-v2/IPLS2/customercontroller/patch-v1customersenable_tracking",
+            "api-reference-v2/IPLS2/customercontroller/patch-v1customersdisable_tracking",
+            "api-reference-v2/IPLS2/customercontroller/patch-v1customersupdate_allowed_domains"
           ]
         }
 

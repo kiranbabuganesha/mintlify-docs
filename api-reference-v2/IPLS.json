@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "IP Lookup Service API",
-    "version": "3.0.0",
+    "title":"IP Lookup Services",
+    "version":"3.0.0",
     "contact": {
       "name": "SproutsAI",
       "url": "https://www.sprouts.ai",
@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://api.sprouts.ai/"
+      "url": "https://api.sprouts.ai"
     }
   ],
   "tags": [
@@ -28,7 +28,6 @@
         ],
         "operationId": "updateWebhook",
         "parameters": [
-
           {
             "name": "customerWebhookId",
             "in": "path",
@@ -60,7 +59,6 @@
         ],
         "operationId": "deleteWebhook",
         "parameters": [
-
           {
             "name": "customerWebhookId",
             "in": "path",
@@ -84,7 +82,6 @@
         ],
         "operationId": "getWebhooks",
         "parameters": [
-
           {
             "name": "predicate",
             "in": "query",
@@ -112,7 +109,9 @@
           "customerController"
         ],
         "operationId": "createWebhook",
+        "parameters": [
 
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -207,7 +206,6 @@
         "description": "This API provide page view information and first and last page info for provided domains.",
         "operationId": "getPageViews",
         "parameters": [
-
           {
             "name": "customerId",
             "in": "path",
@@ -256,7 +254,6 @@
         "description": "This API fetches List of Unique IP Lookup domains. ",
         "operationId": "getDomains_1",
         "parameters": [
-
           {
             "name": "customerId",
             "in": "path",
@@ -451,7 +448,6 @@
         "description": "This API fetches List of Unique IP Lookup domains. ",
         "operationId": "getDomains",
         "parameters": [
-
           {
             "name": "customerId",
             "in": "path",
@@ -602,7 +598,6 @@
         ],
         "operationId": "getCustomers",
         "parameters": [
-
           {
             "name": "predicate",
             "in": "query",
@@ -659,7 +654,9 @@
           "customer-controller"
         ],
         "operationId": "createCustomer",
+        "parameters": [
 
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -684,7 +681,6 @@
         ],
         "operationId": "sendWebhook",
         "parameters": [
-
           {
             "name": "customerId",
             "in": "path",
@@ -720,7 +716,6 @@
         "description": "This API authenticates customer with secret key.",
         "operationId": "authenticateCustomer",
         "parameters": [
-
           {
             "name": "secretKey",
             "in": "header",
@@ -744,7 +739,7 @@
         }
       }
     },
-    "/v1/capture-ip": {
+    "/v1/capture_ip": {
       "post": {
         "tags": [
           "IP Lookup APIs"
@@ -752,6 +747,16 @@
         "summary": "Create IP Lookup with Customer Secret Key",
         "description": "This API creates entry for IP Lookup and also creates mapping for associated customer.",
         "operationId": "captureIPLookupWithAuthorization",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -799,7 +804,6 @@
         ],
         "operationId": "activateWebhook",
         "parameters": [
-
           {
             "name": "customerWebhookId",
             "in": "path",
@@ -823,7 +827,6 @@
         ],
         "operationId": "updateAllowedDomains",
         "parameters": [
-
           {
             "name": "customerId",
             "in": "path",
@@ -857,7 +860,6 @@
         ],
         "operationId": "reloadSecretKey",
         "parameters": [
-
           {
             "name": "customerId",
             "in": "path",
@@ -891,7 +893,6 @@
         ],
         "operationId": "enableTracking",
         "parameters": [
-
           {
             "name": "customerId",
             "in": "path",
@@ -915,7 +916,6 @@
         ],
         "operationId": "disableTracking",
         "parameters": [
-
           {
             "name": "customerId",
             "in": "path",
@@ -932,18 +932,20 @@
         }
       }
     },
-    "/v1/customers/updateAllowedDomains": {
+    "/v1/customers/update_allowed_domains": {
       "patch": {
         "tags": [
           "customerController"
         ],
         "operationId": "updateCustomerAllowedDomains",
+        "parameters": [
 
+        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CustomerUpdateDomainsRequestDto"
+                "$ref": "#/components/schemas/CustomerUpdateDomainsSnakeCaseRequestDto"
               }
             }
           },
@@ -956,13 +958,15 @@
         }
       }
     },
-    "/v1/customers/enableTracking": {
+    "/v1/customers/enable_tracking": {
       "patch": {
         "tags": [
           "customerController"
         ],
         "operationId": "enableCustomerTracking",
+        "parameters": [
 
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -970,13 +974,15 @@
         }
       }
     },
-    "/v1/customers/disableTracking": {
+    "/v1/customers/disable_tracking": {
       "patch": {
         "tags": [
           "customerController"
         ],
         "operationId": "disableCustomerTracking",
+        "parameters": [
 
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -993,7 +999,6 @@
         "description": "This API fetches List of Page Visit History entries against provided IP for provided customer key.",
         "operationId": "getIPPageVisits",
         "parameters": [
-
           {
             "name": "secretKey",
             "in": "header",
@@ -1081,7 +1086,6 @@
         "description": "This API fetches List of IP Lookups whose Domains are resolved with their customer mapping.",
         "operationId": "getCustomerIPMappings",
         "parameters": [
-
           {
             "name": "secretKey",
             "in": "header",
@@ -1143,7 +1147,6 @@
         "description": "This API fetches List of CustomerIpMapping  whose Domains are resolved with their customer mapping in pagenated format.",
         "operationId": "getIPLookupsByCustomerAndDomain",
         "parameters": [
-
           {
             "name": "customerId",
             "in": "path",
@@ -1213,7 +1216,6 @@
         "description": "This API fetches all Utm Parameters.",
         "operationId": "getUtmParameters",
         "parameters": [
-
           {
             "name": "X-Login-Email",
             "in": "header",
@@ -1299,7 +1301,6 @@
         "description": "This API fetches all States.",
         "operationId": "getStates",
         "parameters": [
-
           {
             "name": "X-Login-Email",
             "in": "header",
@@ -1380,7 +1381,6 @@
         "description": "This API fetches List of IP Lookups whose Domains are resolved with their customer mapping in pagenated format.",
         "operationId": "getCustomerIPMappingsPaginated",
         "parameters": [
-
           {
             "name": "secretKey",
             "in": "header",
@@ -1468,7 +1468,6 @@
         "description": "This API fetches all Locations.",
         "operationId": "getLocations",
         "parameters": [
-
           {
             "name": "X-Login-Email",
             "in": "header",
@@ -1546,7 +1545,6 @@
         "description": "This API fetches IP Lookups Consolidated data for a particular Domain.",
         "operationId": "getCustomerIPMappingByDomain",
         "parameters": [
-
           {
             "name": "customerId",
             "in": "path",
@@ -1616,7 +1614,6 @@
         "description": "This API fetches unique page visit dates by provided domain .",
         "operationId": "getIPPageVisitDatesByDomain",
         "parameters": [
-
           {
             "name": "X-Login-Email",
             "in": "header",
@@ -1694,7 +1691,6 @@
         "description": "This API fetches all Page Visits for provided Domain and Date.",
         "operationId": "getIPPageVisitsLocations",
         "parameters": [
-
           {
             "name": "X-Login-Email",
             "in": "header",
@@ -1781,7 +1777,6 @@
         "description": "This API fetches all Page Visits for provided Domain, Date and IP Location.",
         "operationId": "getIPPageVisitsByDomainAndLocation",
         "parameters": [
-
           {
             "name": "X-Login-Email",
             "in": "header",
@@ -1900,7 +1895,6 @@
         "description": "This API fetches List of IP Lookups domain wise whose Domains are resolved with their customer mapping in paginated format.",
         "operationId": "getCustomerIPMappingsDomainWise",
         "parameters": [
-
           {
             "name": "customerId",
             "in": "path",
@@ -1980,7 +1974,6 @@
         "description": "This API fetches all Countries.",
         "operationId": "getCountries",
         "parameters": [
-
           {
             "name": "X-Login-Email",
             "in": "header",
@@ -2053,7 +2046,6 @@
         "description": "This API fetches all Cities.",
         "operationId": "getCities",
         "parameters": [
-
           {
             "name": "X-Login-Email",
             "in": "header",
@@ -2134,7 +2126,6 @@
         "description": "This API fetches List of IP Lookups with ClearBit attempts in paginated format.",
         "operationId": "getCustomerIPMappingAttempts",
         "parameters": [
-
           {
             "name": "customerId",
             "in": "path",
@@ -2214,7 +2205,6 @@
         "description": "This API fetches List of Page Visit History entries against provided customer key.",
         "operationId": "getIPPageVisits_1",
         "parameters": [
-
           {
             "name": "secretKey",
             "in": "header",
@@ -2304,14 +2294,6 @@
             "name": "customerId",
             "in": "path",
             "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "required": false,
             "schema": {
               "type": "string"
             }
@@ -2868,6 +2850,18 @@
             "maxLength": 255,
             "minLength": 0,
             "type": "string"
+          }
+        }
+      },
+      "CustomerUpdateDomainsSnakeCaseRequestDto": {
+        "type": "object",
+        "properties": {
+          "allowed_domains": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
