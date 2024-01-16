@@ -58,7 +58,7 @@
       "group": "Website Accounts",
       "pages":[
         {
-          "group": "Capture API",
+          "group": "Capture Website Traffic",
           "pages":[
             "api-reference-v2/IPLS2/ip-lookup-apis/create-ip-lookup-with-customer-secret-key-1"
           ]
@@ -75,7 +75,7 @@
           ]
         },
         {
-          "group": "Customer Controller API",
+          "group": "Configuration API",
           "pages": [
             "api-reference-v2/IPLS2/customercontroller/patch-v1customersenable_tracking",
             "api-reference-v2/IPLS2/customercontroller/patch-v1customersdisable_tracking",
